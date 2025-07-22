@@ -6,6 +6,9 @@
    position: relative;
    margin: 20px;
 }
+.containerGrande{
+  width:900px ;
+}
 
 .barra{
     width: 90px;
