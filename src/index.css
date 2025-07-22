@@ -1,0 +1,33 @@
+.container{
+   border-bottom:5px solid black;
+   border-left: 5px solid black;
+   width: 200px;
+   height: 200px;
+   position: relative;
+   margin: 20px;
+}
+
+.barra{
+    width: 90px;
+    height: 1px;
+    position: absolute;
+    left: 10px;
+    bottom:10px;
+}
+
+.roja{
+    background-color: red;
+}
+
+.animar{
+    animation: animar1 2s ease-in forwards;
+
+}
+@keyframes animar1{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: var(--altura);
+    }
+}
