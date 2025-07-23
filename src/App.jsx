@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState, useRef} from "react"
 
 function App(){
+    const elementoRef=useRef(null);
     const valores=[
       {color:"red",alto:77},
       {color:"olive",alto:177},
@@ -8,24 +9,19 @@ function App(){
     ]
     const[altura,setAltura]=useState(109);
     const aumentar=()=>{
-      (altura>=225)
-      ? setAltura(10)
-      : setAltura(altura+25)
+      elementoRef.current.classList.toggle('stop')
     }
     return (
         <>
-            <div className="container containerGrande"> 
-                {valores.map((valor,i)=>
-                <div key={i} className="barra animar">
-                style={{"--altura":`${altura}px`,
-                  left:`${10+(i*1000)}px`,
-                  backgroundColor:valor.color,
-                  transition:'height 1s ease-out'
+            <div className="container "> 
+               
+                <div ref={elementoRef} className="barra roja animar">
+                style={{"--altura":`${altura}px`
                 }}
                onClick={aumentar}
                     
                 </div>
-              )}
+              
             </div>
 
         </>
@@ -33,4 +29,4 @@ function App(){
     )
 }
 
-export default App
+export default App;
